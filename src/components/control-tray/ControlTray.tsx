@@ -50,6 +50,7 @@ function ControlTray({
   const videoStreams = [useWebcam(), useScreenCapture()];
   const [activeVideoStream, setActiveVideoStream] =
     useState<MediaStream | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [webcam, screenCapture] = videoStreams;
   const [inVolume, setInVolume] = useState(0);
   const [audioRecorder] = useState(() => new AudioRecorder());
@@ -162,13 +163,13 @@ function ControlTray({
 
         {supportsVideo && (
           <>
-            <MediaStreamButton
+            {/* <MediaStreamButton
               isStreaming={screenCapture.isStreaming}
               start={changeStreams(screenCapture)}
               stop={changeStreams()}
               onIcon="cancel_presentation"
               offIcon="present_to_all"
-            />
+            /> */}
             <MediaStreamButton
               isStreaming={webcam.isStreaming}
               start={changeStreams(webcam)}
